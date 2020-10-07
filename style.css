@@ -1,0 +1,20 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+}
+
+section {
+    display: block;
+}
+
+button {
+    padding: 10px 30px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 2em;
+    border-radius: 5px;
+}

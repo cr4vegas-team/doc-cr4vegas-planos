@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CR4V | Planos</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <header>
+      <button onclick="changeImage('plano_7000_800.jpg')">7000_8000</button>
+      <button onclick="changeImage('plano_IV.jpg')">IV</button>
+      <button onclick="changeImage('plano_VA.jpg')">VA</button>
+      <button onclick="changeImage('plano_VB.jpg')">VB</button>
+      <button onclick="changeImage('plano_VI_VII.jpg')">VI_VII</button>
+    </header>
+
+    <br>
+
+    <section>
+      <img
+        id="image"
+        src="planos-actualizados/plano_7000_800.jpg"
+        alt="plano_7000_800.jpg"
+      />
+    </section>
+  </body>
+
+  <script>
+    function changeImage(imageName) {
+      console.log(imageName);
+      document
+        .getElementById("image")
+        .setAttribute("src", "planos-actualizados/" + imageName);
+    }
+  </script>
+</html>
