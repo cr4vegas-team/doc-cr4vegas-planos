@@ -13,9 +13,8 @@
             position: fixed;
             top: 0px;
             left: 0px;
-            right: 0px;
             padding: 2px;
-            margin: 0px auto;
+            width: 100%;
         }
 
         #map {
@@ -26,7 +25,7 @@
 
 <body>
 
-    <div id="controls">
+    <div id="controls" class="d-flex flex-row flex-wrap justify-content-center">
         <div class="d-flex flex-column flex-wrap gap-1 align-items-center bg-white rounded-2">
             <div class="d-flex flex-row flex-wrap gap-1">
                 <button id="iv" type="button" class="btn btn-primary flex-grow-1">IV</button>
@@ -59,6 +58,8 @@
         const path7k8k = './planos-actualizados/plano_7000_800.svg';
 
         const divControls = document.getElementById('controls');
+        divControls.style.maxWidth = screen.width + 'px';
+
         const btnIV = document.getElementById('iv');
         const btnVA = document.getElementById('va');
         const btnVB = document.getElementById('vb');
@@ -97,19 +98,15 @@
         btnSum.addEventListener('click', () => {
             let width = svg.style.width.slice(0, svg.style.width.length - 1);
             const height = svg.style.height.slice(0, svg.style.height.length - 1);
-            svg.style.width = `${Number.parseInt(width) + 20}%`;
-            svg.style.height = `${Number.parseInt(height) + 20}%`;
-            /* width = svg.style.width.slice(0, svg.style.width.length - 1);
-            if (width > 100) {
-                divControls.style.right = 'auto';
-            } */
+            svg.style.width = `${Number.parseInt(width) + 25}%`;
+            svg.style.height = `${Number.parseInt(height) + 25}%`;
         });
 
         btnRest.addEventListener('click', () => {
             const width = svg.style.width.slice(0, svg.style.width.length - 1);
             const height = svg.style.height.slice(0, svg.style.height.length - 1);
-            svg.style.width = `${Number.parseInt(width) - 20}%`;
-            svg.style.height = `${Number.parseInt(height) - 20}%`;
+            svg.style.width = `${Number.parseInt(width) - 25}%`;
+            svg.style.height = `${Number.parseInt(height) - 25}%`;
         });
 
         inputSearch.addEventListener('keyup', () => {
