@@ -97,8 +97,8 @@
         btnSum.addEventListener('click', () => {
             let width = svg.style.width.slice(0, svg.style.width.length - 1);
             const height = svg.style.height.slice(0, svg.style.height.length - 1);
-            svg.style.width = `${Number.parseInt(width) + 5}%`;
-            svg.style.height = `${Number.parseInt(height) + 5}%`;
+            svg.style.width = `${Number.parseInt(width) + 20}%`;
+            svg.style.height = `${Number.parseInt(height) + 20}%`;
             /* width = svg.style.width.slice(0, svg.style.width.length - 1);
             if (width > 100) {
                 divControls.style.right = 'auto';
@@ -108,8 +108,8 @@
         btnRest.addEventListener('click', () => {
             const width = svg.style.width.slice(0, svg.style.width.length - 1);
             const height = svg.style.height.slice(0, svg.style.height.length - 1);
-            svg.style.width = `${Number.parseInt(width) - 10}%`;
-            svg.style.height = `${Number.parseInt(height) - 10}%`;
+            svg.style.width = `${Number.parseInt(width) - 20}%`;
+            svg.style.height = `${Number.parseInt(height) - 20}%`;
         });
 
         inputSearch.addEventListener('keyup', () => {
