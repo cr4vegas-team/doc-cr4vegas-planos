@@ -100,6 +100,33 @@
             });
         });
 
+        let touchesX = 0;
+        let touchesY = 0;
+
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 1) {
+                const fingerOne = e.touches[0];
+                const fingerTwo = e.touches[1];
+                const svg = divMap.getElementsByTagName('svg')[0];
+                if (
+                    ((fingerOne.screenX + fingerTwo.screenX) / 2 > touchesX)
+                    || ((fingerOne.screenY + fingerTwo.screenY) / 2 > touchesY)
+                ) {
+                    svg.style.width = `${Number.parseInt(svg.style.width) + 5}px`;
+                    svg.style.height = `${Number.parseInt(svg.style.height) + 5}px`;
+                }
+                if (
+                    ((fingerOne.screenX + fingerTwo.screenX) / 2 < touchesX)
+                    || ((fingerOne.screenY + fingerTwo.screenY) / 2 < touchesY)
+                ) {
+                    svg.style.width = `${Number.parseInt(svg.style.width) - 5}px`;
+                    svg.style.height = `${Number.parseInt(svg.style.height) - 5}px`;
+                }
+                touchesX = (fingerOne.screenX + fingerTwo.screenX) / 2;
+                touchesY = (fingerOne.screenY + fingerTwo.screenY) / 2;
+            }
+        })
+
         function markHydrant(div) {
             div.classList.add('marked');
             if (div.childNodes[0] && div.childNodes[0].style) {
@@ -128,9 +155,6 @@
                 .then(res => res.text())
                 .then(text => {
                     divMap.innerHTML = text;
-                    const svg = divMap.getElementsByTagName('svg')[0];
-                    svg.style.width = '100%';
-                    svg.style.height = '100%';
                 })
                 .catch(err => {
                     console.log(err);
