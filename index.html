@@ -98,15 +98,15 @@
         btnSum.addEventListener('click', () => {
             let width = svg.style.width.slice(0, svg.style.width.length - 1);
             const height = svg.style.height.slice(0, svg.style.height.length - 1);
-            svg.style.width = `${Number.parseInt(width) + 25}%`;
-            svg.style.height = `${Number.parseInt(height) + 25}%`;
+            svg.style.width = `${Number.parseInt(width) + 100}%`;
+            svg.style.height = `${Number.parseInt(height) + 100}%`;
         });
 
         btnRest.addEventListener('click', () => {
             const width = svg.style.width.slice(0, svg.style.width.length - 1);
             const height = svg.style.height.slice(0, svg.style.height.length - 1);
-            svg.style.width = `${Number.parseInt(width) - 25}%`;
-            svg.style.height = `${Number.parseInt(height) - 25}%`;
+            svg.style.width = `${Number.parseInt(width) - 100}%`;
+            svg.style.height = `${Number.parseInt(height) - 100}%`;
         });
 
         inputSearch.addEventListener('keyup', () => {
